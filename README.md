@@ -11,8 +11,8 @@ My goal is to build real-world cloud skills by documenting every lab and project
 ## 📚 Services
 
 - ✅ EC2
-- ⏳ S3
-- ⏳ IAM
+- ✅ S3
+- ✅ IAM
 - ⏳ VPC
 - ⏳ Route 53
 - ⏳ RDS
