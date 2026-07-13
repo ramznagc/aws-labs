@@ -1,61 +1,58 @@
-# ☁️ AWS Labs
+# ☁️ AWS Hands-on Labs
 
-Welcome to my AWS learning journey!
+Welcome to my AWS Hands-on Labs repository!
 
-This repository contains hands-on AWS labs, practical exercises, and projects that I complete while learning Amazon Web Services.
-
-My goal is to build real-world cloud skills by documenting every lab and project.
+This repository documents my journey of learning AWS through hands-on practice. Each service has its own dedicated lab with step-by-step documentation.
 
 ---
 
-## 📚 Services
+## 📚 Available Labs
 
-- ✅ EC2
-- ✅ S3
-- ✅ IAM
-- ⏳ VPC
-- ⏳ Route 53
-- ⏳ RDS
-- ⏳ Lambda
-- ⏳ CloudWatch
-- ⏳ ECS
-- ⏳ EKS
+| AWS Service | Status |
+|-------------|--------|
+| 🔐 IAM | ✅ Completed |
+| 🖥️ EC2 | 🚧 Coming Soon |
+| 🪣 S3 | ⏳ Planned |
+| 🌐 VPC | ⏳ Planned |
+| ⚖️ Elastic Load Balancer (ELB) | ⏳ Planned |
+| 📈 Auto Scaling | ⏳ Planned |
+| 🗄️ RDS | ⏳ Planned |
+| 🌍 Route 53 | ⏳ Planned |
+| 📊 CloudWatch | ⏳ Planned |
 
 ---
 
-## 📂 Repository Structure
+## 🎯 Repository Goals
+
+- Learn AWS by building hands-on labs
+- Document every completed exercise
+- Build a strong Cloud Engineering portfolio
+- Improve Linux, Git, and AWS skills
+
+---
+
+## 🛠️ Technologies
+
+- Amazon Web Services (AWS)
+- Linux
+- Git & GitHub
+- Bash
+
+---
+
+## 📁 Repository Structure
 
 ```text
-aws-labs
-│
+aws-labs/
 ├── README.md
-├── ec2
-│   └── apache-web-server
-├── s3
-├── iam
-├── vpc
-├── rds
-├── lambda
-└── cloudwatch
+├── IAM/
+│   └── README.md
+├── EC2/
+├── S3/
+├── VPC/
+└── ...
 ```
 
 ---
 
-## 🚀 Current Labs
-
-| Service | Project | Status |
-|---------|---------|--------|
-| EC2 | Apache Web Server Installation | ✅ |
-
----
-
-## 🎯 Goal
-
-- Learn AWS through hands-on labs
-- Build practical cloud skills
-- Document every project
-- Create a professional AWS portfolio on GitHub
-
----
-
-⭐ New labs will be added regularly.
+⭐ New labs will be added as I continue my Cloud Engineering journey.
