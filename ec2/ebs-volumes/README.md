@@ -8,7 +8,7 @@
 
 Amazon Elastic Block Store (EBS) provides persistent block storage for Amazon EC2 instances. In this lab, I learned how to resize the root volume, create and attach additional EBS volumes, mount them to Linux, extend their capacity, and configure automatic mounting after reboot.
 
---
+---
 
 # 🎯 Learning Objectives
 
