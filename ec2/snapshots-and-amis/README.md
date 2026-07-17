@@ -10,7 +10,7 @@ Amazon EBS Snapshots and Amazon Machine Images (AMIs) are essential services for
 
 In this lab, I created snapshots from EBS volumes, generated custom AMIs, launched new EC2 instances from those AMIs, and explored automated snapshot management using AWS Data Lifecycle Manager.
 
----
+--
 
 # 🎯 Learning Objectives
 
