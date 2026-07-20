@@ -73,7 +73,7 @@ My goal is to strengthen my technical skills by learning through practice, docum
 - 📚 Document my continuous learning journey
 - 🚀 Build a strong Cloud & DevOps portfolio
 
----
+--
 
 ## 🛠️ Technologies & Tools
 
