@@ -5,6 +5,17 @@ Description: >
   This template creates an EC2 instance and a Security Group
   that allows SSH and HTTP traffic.
 
+Parameters:
+
+  InstanceType:
+    Type: String
+    Default: t2.micro
+    Description: EC2 instance type
+
+  KeyName:
+    Type: AWS::EC2::KeyPair::KeyName
+    Description: Select an existing EC2 Key Pair
+
 Resources:
 
   MyCfnSG:
@@ -28,8 +39,8 @@ Resources:
     Type: AWS::EC2::Instance
     Properties:
       ImageId: ami-xxxxxxxxxxxxxxxxx
-      InstanceType: t2.micro
-      KeyName: YOUR-KEY-PAIR-NAME
+      InstanceType: !Ref InstanceType
+      KeyName: !Ref KeyName
 
       SecurityGroups:
         - !Ref MyCfnSG
