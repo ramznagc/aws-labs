@@ -12,6 +12,10 @@ My goal is to strengthen my technical skills by learning through practice, docum
 
 ### ☁️ Amazon Web Services (AWS)
 
+#### ☁️ AWS CloudFormation
+
+- [First CloudFormation Template - Infrastructure as Code](./CloudFormation/first-cloudformation-template/)
+
 #### 🖥️ Amazon EC2
 
 - [Apache Web Server](./EC2/apache-web-server/)
@@ -43,6 +47,7 @@ My goal is to strengthen my technical skills by learning through practice, docum
 |---|---|
 | 🔐 AWS IAM | ✅ Hands-on Completed |
 | 🖥️ Amazon EC2 | 🔄 In Progress |
+| ☁️ AWS CloudFormation | 🔄 In Progress |
 | 💾 Amazon EBS | ✅ Hands-on Completed |
 | 📸 EBS Snapshots & AMIs | ✅ Hands-on Completed |
 | 🐧 Linux Fundamentals | 🔄 In Progress |
@@ -73,6 +78,9 @@ My goal is to strengthen my technical skills by learning through practice, docum
 ## 🛠️ Technologies & Tools
 
 - Amazon Web Services (AWS)
+- AWS CloudFormation
+- YAML
+- Infrastructure as Code (IaC)
 - Amazon EC2
 - Amazon EBS
 - AWS IAM

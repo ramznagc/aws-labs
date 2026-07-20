@@ -1,0 +1,40 @@
+# YAML Fundamentals Examples
+
+# Key-Value Pairs
+name: CloudFormation Lab
+service: AWS CloudFormation
+environment: development
+
+# List
+technologies:
+  - AWS
+  - CloudFormation
+  - EC2
+  - YAML
+
+# Nested Structure
+instance:
+  type: t2.micro
+  operating_system: Amazon Linux
+  monitoring: false
+
+# Inline List
+ports: [22, 80]
+
+# Nested Network Configuration
+security_group:
+  name: WebServerSecurityGroup
+  inbound_rules:
+    - protocol: tcp
+      port: 22
+      description: SSH Access
+
+    - protocol: tcp
+      port: 80
+      description: HTTP Access
+
+# Multi-line Text
+description: |
+  This YAML file contains basic examples
+  used to understand YAML syntax before
+  working with AWS CloudFormation templates.
