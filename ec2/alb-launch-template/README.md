@@ -154,4 +154,18 @@ Application Load Balancers are commonly used in AWS environments for:
 
 ---
 
+---
+
+## 📖 Key AWS Terms
+
+| Service | Purpose |
+|---------|---------|
+| Application Load Balancer | Distributes HTTP/HTTPS traffic |
+| Launch Template | Standardizes EC2 instance configuration |
+| Target Group | Groups backend EC2 instances |
+| Listener | Listens for incoming client requests |
+| Health Check | Monitors target availability |
+| Security Group | Controls inbound and outbound traffic |
+
+
 ⭐ Part of my AWS & Cloud Engineering hands-on documentation.
