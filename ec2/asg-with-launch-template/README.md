@@ -130,3 +130,19 @@ After deployment, validate the following:
 - Avoid aggressive scaling thresholds.
 - Monitor infrastructure using Amazon CloudWatch.
 - Distribute instances across multiple Availability Zones.
+
+---
+
+---
+
+## 📚 AWS Services Reference
+
+| Service | Purpose |
+|---------|---------|
+| Amazon EC2 | Virtual machines |
+| Launch Template | EC2 configuration template |
+| Auto Scaling Group | Automatic instance scaling |
+| Application Load Balancer | Traffic distribution |
+| Target Group | Backend instance management |
+| Amazon CloudWatch | Monitoring and alarms |
+| Security Groups | Network access control |
