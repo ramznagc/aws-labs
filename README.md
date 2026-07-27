@@ -45,3 +45,16 @@ Quick reference notes created during my networking studies.
 - [IP Addressing Cheat Sheet](./cheatsheets/ip-addressing-cheat-sheet.md)
 
 ⭐ Networking is one of the core skills for Cloud Engineering.
+
+---
+
+## 🗺️ Planned Network Topology Diagrams
+
+To improve the learning experience, topology diagrams will be added as new labs are completed.
+
+| Lab | Diagram |
+|------|---------|
+| Network 01 – Introduction to Networks | ⏳ Planned |
+| Network 02 – TCP/IP Fundamentals | ⏳ Planned |
+| Network 03 – IP Addressing | ⏳ Planned |
+| Future Networking Labs | ⏳ Planned |
