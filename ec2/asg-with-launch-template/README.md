@@ -117,3 +117,16 @@ After deployment, validate the following:
 - Verify Scale-Out policy execution.
 - Stop the stress test and verify Scale-In policy execution.
 - Monitor CloudWatch metrics during scaling events.
+
+---
+
+---
+
+## 🛡️ AWS Best Practices
+
+- Use Launch Templates instead of Launch Configurations.
+- Configure Health Checks for all targets.
+- Keep desired capacity based on application requirements.
+- Avoid aggressive scaling thresholds.
+- Monitor infrastructure using Amazon CloudWatch.
+- Distribute instances across multiple Availability Zones.
