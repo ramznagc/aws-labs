@@ -146,3 +146,20 @@ After deployment, validate the following:
 | Target Group | Backend instance management |
 | Amazon CloudWatch | Monitoring and alarms |
 | Security Groups | Network access control |
+
+---
+
+---
+
+# 🔍 Validation Checklist
+
+After completing this hands-on, verify the following:
+
+- [ ] Launch Template created successfully
+- [ ] Target Group reports healthy targets
+- [ ] Application Load Balancer is routing traffic correctly
+- [ ] Auto Scaling Group launches the desired number of instances
+- [ ] Scale-Out policy is triggered when CPU utilization increases
+- [ ] Scale-In policy removes unnecessary instances
+- [ ] CloudWatch alarms change state correctly
+- [ ] Application remains available during scaling events
