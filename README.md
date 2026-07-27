@@ -44,7 +44,7 @@ Quick reference notes created during my networking studies.
 
 - [IP Addressing Cheat Sheet](./cheatsheets/ip-addressing-cheat-sheet.md)
 
-⭐ Networking is one of the core skills for Cloud Engineering.
+⭐ Networking is one of the fundamental skills for Cloud Engineering.
 
 ---
 
