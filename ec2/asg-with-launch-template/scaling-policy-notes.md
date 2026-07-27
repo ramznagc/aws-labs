@@ -55,3 +55,17 @@ Target CPU
 - Attach Target Groups
 - Avoid aggressive scaling
 - Monitor CloudWatch continuously
+
+---
+
+---
+
+## 🧪 Hands-on Validation
+
+After completing the lab, I verified that:
+
+- EC2 instances were automatically registered to the Target Group.
+- Health checks reported healthy targets.
+- Auto Scaling replaced unhealthy instances.
+- CloudWatch alarms triggered scaling actions.
+- Application traffic was distributed through the ALB.

@@ -102,3 +102,18 @@ CloudWatch monitors EC2 metrics and automatically triggers scaling policies base
 - Optimizes infrastructure costs.
 - Uses CloudWatch for monitoring.
 - Supports highly available architectures.
+
+---
+
+---
+
+## 🧪 Testing Scenarios
+
+After deployment, validate the following:
+
+- Verify healthy targets in the Target Group.
+- Stop one EC2 instance and confirm Auto Scaling launches a replacement.
+- Generate CPU load using the `stress` tool.
+- Verify Scale-Out policy execution.
+- Stop the stress test and verify Scale-In policy execution.
+- Monitor CloudWatch metrics during scaling events.
