@@ -71,3 +71,51 @@ Hosts per subnet:
 - Host bits are borrowed to create subnet bits.
 - Every subnet has its own Network ID and Broadcast Address.
 - CIDR notation simplifies subnet representation.
+
+---
+
+---
+
+# 🧮 Subnetting Calculation Workflow
+
+Follow these steps when solving subnetting problems:
+
+1. Determine the required number of subnets.
+2. Borrow the minimum number of host bits.
+3. Calculate the new subnet mask.
+4. Determine the block size.
+5. Identify the Network Address.
+6. Calculate the Broadcast Address.
+7. Determine the first and last usable host addresses.
+
+---
+
+## Example
+
+Network:
+
+192.168.123.0/24
+
+Required Subnets:
+
+4
+
+Borrowed Bits:
+
+2
+
+New CIDR:
+
+/26
+
+Subnet Mask:
+
+255.255.255.192
+
+Hosts per Subnet:
+
+62
+
+Block Size:
+
+64
