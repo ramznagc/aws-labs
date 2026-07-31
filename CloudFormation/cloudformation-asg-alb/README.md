@@ -62,3 +62,31 @@ cloudformation-asg-alb
 - Deployments become faster.
 - Manual configuration is minimized.
 - Cloud resources remain consistent.
+
+---
+
+---
+
+## 📚 AWS Services Reference
+
+| Service | Purpose |
+|---------|---------|
+| AWS CloudFormation | Infrastructure as Code |
+| Amazon EC2 | Virtual Servers |
+| Launch Template | Instance Configuration |
+| Auto Scaling Group | Automatic Scaling |
+| Application Load Balancer | Traffic Distribution |
+| Target Group | Backend Health Management |
+| Amazon CloudWatch | Monitoring & Alarms |
+| Security Groups | Network Security |
+
+---
+
+## 🧪 Validation Steps
+
+- Verify CloudFormation stack status.
+- Check Launch Template creation.
+- Confirm Auto Scaling Group health.
+- Access the Application Load Balancer DNS.
+- Generate CPU load to validate scaling.
+- Monitor CloudWatch alarms.
