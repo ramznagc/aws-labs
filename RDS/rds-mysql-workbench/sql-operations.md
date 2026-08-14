@@ -1,119 +1,181 @@
-# 🧮 SQL Operations with RDS MySQL
+# MySQL SQL Operations
 
-## 1. Create Table
+## Overview
+
+This document contains example SQL operations used with the MySQL database.
+
+The examples cover database creation, table creation, inserting data, retrieving records, filtering and joining related tables.
+
+## Show Databases
+
+```sql
+SHOW DATABASES;
+```
+
+## Create a Database
+
+```sql
+CREATE DATABASE sampledb;
+```
+
+Select the database:
+
+```sql
+USE sampledb;
+```
+
+## Create the Offices Table
+
+```sql
+CREATE TABLE offices (
+    office_id INT NOT NULL,
+    address VARCHAR(50) NOT NULL,
+    city VARCHAR(50) NOT NULL,
+    state VARCHAR(50) NOT NULL,
+    PRIMARY KEY (office_id)
+);
+```
+
+## Insert Data
+
+```sql
+INSERT INTO offices
+    (office_id, address, city, state)
+VALUES
+    (1, '03 Reinke Trail', 'Cincinnati', 'OH');
+```
+
+Additional records can be inserted using the same structure.
+
+## Create the Employees Table
+
+```sql
+CREATE TABLE employees (
+    employee_id INT NOT NULL,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    job_title VARCHAR(50) NOT NULL,
+    salary INT NOT NULL,
+    reports_to INT DEFAULT NULL,
+    office_id INT NOT NULL,
+    PRIMARY KEY (employee_id),
+    FOREIGN KEY (office_id)
+        REFERENCES offices (office_id)
+);
+```
+
+## Show Tables
+
+```sql
+SHOW TABLES;
+```
+
+## Query Data
+
+Retrieve all offices:
+
+```sql
+SELECT * FROM offices;
+```
+
+Retrieve all employees:
+
+```sql
+SELECT * FROM employees;
+```
+
+## Filtering Data
 
 Example:
 
 ```sql
-CREATE TABLE `clarusway`.`Personal_Info_2` (
-    `ID_number` INT NOT NULL,
-    `Name` VARCHAR(45) NULL,
-    `Surname` VARCHAR(45) NULL,
-    `Gender` VARCHAR(45) NULL,
-    `Age` INT NULL,
-    `Department` VARCHAR(45) NULL,
-    PRIMARY KEY (`ID_number`)
-);
-```
-
----
-
-# 2. Insert Data
-
-```sql
-INSERT INTO clarusway.Personal_Info_2
-(ID_number, Name, Surname, Age, Department)
-VALUES
-('1234','Osvaldo','Clarusway','43','dev'),
-('56789','Guile','Clarusway','34','dev'),
-('007','Charlie','Clarusway','54','devops'),
-('432','Marcus','Clarusway','32','test'),
-('324','Vincenzo','Clarusway','25','dev'),
-('4587','Aslan','Clarusway','61','test'),
-('43546','Serdar','Clarusway','37','devops');
-```
-
----
-
-# 3. Select All Data
-
-```sql
 SELECT *
-FROM clarusway.Personal_Info_1;
+FROM offices
+WHERE state = 'OH';
 ```
 
----
+## INNER JOIN
 
-# 4. Filter Data
-
-Find people whose salary is greater than 40,000:
-
-```sql
-SELECT *
-FROM clarusway.Personal_Info_1
-WHERE salary > 40000;
-```
-
----
-
-# 5. JOIN Tables
-
-Join `Personal_Info_1` and `Personal_Info_2` using `ID_number`:
+The `employees` and `offices` tables can be related through `office_id`.
 
 ```sql
 SELECT
-    p1.Name,
-    p1.Surname,
-    p2.Department,
-    p1.Salary
-FROM clarusway.Personal_Info_1 AS p1
-JOIN clarusway.Personal_Info_2 AS p2
-ON p1.ID_number = p2.ID_number;
+    employees.first_name,
+    employees.last_name,
+    employees.salary,
+    offices.city,
+    offices.state
+FROM employees
+INNER JOIN offices
+    ON employees.office_id = offices.office_id;
 ```
 
----
+## Filtering Joined Data
 
-# 6. JOIN with Filtering
-
-Find people whose salary is greater than 50,000 and display their department:
+Example:
 
 ```sql
 SELECT
-    p1.Name,
-    p1.Surname,
-    p2.Department,
-    p1.Salary
-FROM clarusway.Personal_Info_1 AS p1
-JOIN clarusway.Personal_Info_2 AS p2
-ON p1.ID_number = p2.ID_number
-WHERE p1.Salary > 50000;
+    employees.first_name,
+    employees.last_name,
+    employees.salary,
+    offices.city,
+    offices.state
+FROM employees
+INNER JOIN offices
+    ON employees.office_id = offices.office_id
+WHERE employees.salary > 100000;
 ```
 
----
+This query combines employee and office information and returns employees with salaries above `100000`.
 
-# 7. SQL Workflow
+## Common SQL Commands
+
+```sql
+SHOW DATABASES;
+
+USE sampledb;
+
+SHOW TABLES;
+
+SELECT * FROM offices;
+
+SELECT * FROM employees;
+```
+
+## SQL Workflow
 
 ```text
-Create Database
-      ↓
-Create Table
-      ↓
+Connect
+   │
+   ▼
+Select Database
+   │
+   ▼
+Create Tables
+   │
+   ▼
 Insert Data
-      ↓
-SELECT
-      ↓
-WHERE
-      ↓
-JOIN
-      ↓
-Analyze Results
+   │
+   ▼
+Query Data
+   │
+   ▼
+Filter / Join Data
 ```
 
----
+## Learning Outcome
 
-# Key Takeaways
+The exercises demonstrate basic relational database operations using MySQL.
 
-- RDS provides the managed MySQL database.
-- MySQL Workbench provides the database management interface.
-- SQL is used to create, modify, retrieve and combine data.
-- JOIN operations allow related data from multiple tables to be queried together.
+Topics covered:
+
+* Database creation
+* Table creation
+* Data insertion
+* Data retrieval
+* Filtering
+* Primary keys
+* Foreign keys
+* INNER JOIN
+* Relational data

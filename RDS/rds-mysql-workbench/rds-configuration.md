@@ -1,186 +1,114 @@
-# ⚙️ RDS MySQL Configuration
+# RDS MySQL Configuration
 
-## 1. Create Security Group
+## Overview
 
-Create a Security Group for the RDS database from the EC2 dashboard.
+This document describes the main configuration steps for the Amazon RDS MySQL database used in this project.
 
-Example configuration:
+The purpose of this document is to explain how the RDS database was configured and prepared for client connections.
 
-```text
-Security Group Name: clarusway_db_sg
-Description: RDS MySQL Security Group
-VPC: Default
-```
+## Database Engine
 
-### Inbound Rule
+The database engine used in this project is:
 
 ```text
-Type: MYSQL/AURORA
-Port: 3306
-Source: My IP
+MySQL
 ```
 
-Outbound rules can remain at their default configuration.
+Amazon RDS provides the managed database infrastructure while AWS manages the underlying database environment.
 
----
+## Basic Configuration
 
-# 2. Create RDS Database
+The RDS database requires several configuration values.
 
-Open:
+| Setting                | Value                      |
+| ---------------------- | -------------------------- |
+| Engine                 | MySQL                      |
+| DB Instance Identifier | `<DB_INSTANCE_IDENTIFIER>` |
+| Database Name          | `<DATABASE_NAME>`          |
+| Master Username        | `<DB_USERNAME>`            |
+| Port                   | `3306`                     |
+
+Sensitive information such as passwords should never be stored in this repository.
+
+## Network Connectivity
+
+The database client connects to the RDS instance using the MySQL protocol.
 
 ```text
-AWS Console
-→ RDS
-→ Databases
-→ Create database
+MySQL Workbench
+       │
+       │ TCP 3306
+       ▼
+Amazon RDS MySQL
 ```
 
-Choose:
+The standard MySQL port is:
 
 ```text
-Creation method:
-Create with full configuration
+3306
 ```
 
----
+## Security Group
 
-# 3. Database Engine
+The RDS instance uses a Security Group to control network traffic.
+
+Example MySQL inbound rule:
 
 ```text
-Engine: MySQL
+Type:     MySQL/Aurora
+Protocol: TCP
+Port:     3306
+Source:   Trusted Client IP
 ```
 
-Use the MySQL version required by the current lab environment.
+For production environments, database access should be restricted to the smallest practical network scope.
 
----
+Avoid unrestricted database access whenever possible.
 
-# 4. Template
+## RDS Endpoint
 
-For learning environments:
-
-```text
-Template: Sandbox / Free Tier
-```
-
-Always verify current AWS pricing and Free Tier eligibility before creating resources.
-
----
-
-# 5. Database Settings
+The RDS instance provides an endpoint that database clients use for connectivity.
 
 Example:
 
 ```text
-DB Instance Identifier: RDS-mysql
-Master Username: admin
-Master Password: YOUR_DB_PASSWORD
+<DB_INSTANCE_ENDPOINT>
 ```
 
-> Never commit the real master password to GitHub.
+The endpoint should be used by the database client when establishing a connection.
 
----
+## Configuration Checklist
 
-# 6. DB Instance Class
+* [ ] Create the RDS MySQL instance
+* [ ] Configure the DB instance identifier
+* [ ] Configure the database credentials
+* [ ] Configure networking
+* [ ] Configure the Security Group
+* [ ] Allow TCP port `3306` from the required source
+* [ ] Obtain the RDS endpoint
+* [ ] Test database connectivity
 
-Example configuration from the lab:
+## Security Notes
+
+Never commit credentials to GitHub.
+
+Do not store:
 
 ```text
-DB Instance Class:
-Burstable classes
-
-Instance:
-db.t4g.micro
+<DB_PASSWORD>
+AWS_ACCESS_KEY_ID
+AWS_SECRET_ACCESS_KEY
+Private Keys
 ```
 
----
-
-# 7. Storage
-
-Example:
+Use placeholders instead:
 
 ```text
-Storage Type: SSD
-Storage Size: 20 GiB
-Storage Autoscaling: Enabled
-Maximum Storage Threshold: 22 GiB
+<DB_USERNAME>
+<DB_PASSWORD>
+<DB_INSTANCE_ENDPOINT>
 ```
 
----
+## Summary
 
-# 8. Connectivity
-
-Example:
-
-```text
-VPC: Default
-Subnet Group: Default
-Publicly Accessible: Yes
-Security Group: clarusway_db_sg
-Port: 3306
-```
-
-The database should only be exposed to the required source IP when possible.
-
----
-
-# 9. Authentication
-
-```text
-Database Authentication:
-Password authentication
-```
-
----
-
-# 10. Additional Configuration
-
-Example:
-
-```text
-Initial Database Name: clarusway
-
-Parameter Group: default
-Option Group: default
-
-Automatic Backups: Enabled
-Backup Retention: 7 days
-
-Monitoring: Disabled
-Log Exports: Disabled
-
-Deletion Protection: Enabled
-```
-
----
-
-# 11. Important Concepts
-
-## Automatic Backups
-
-RDS automatic backups allow recovery of the database within the configured retention period.
-
-## Maintenance
-
-Minor version upgrades can be enabled for maintenance.
-
-Major and minor version upgrades should be evaluated differently because major upgrades can introduce compatibility changes.
-
-## Deletion Protection
-
-Deletion protection prevents accidental deletion of the database instance.
-
-This is especially useful for production databases.
-
----
-
-# 12. Verify the Database
-
-After creation, open the RDS database page and review:
-
-- Connectivity & security
-- Monitoring
-- Configuration
-- Maintenance
-- Backups
-
-The RDS endpoint will be required when configuring MySQL Workbench.
+The RDS configuration provides the managed MySQL database required for the next stage of the project: connecting through MySQL Workbench and performing SQL operations.

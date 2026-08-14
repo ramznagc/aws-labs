@@ -1,110 +1,103 @@
-# 🔌 MySQL Workbench Connection
+# MySQL Workbench Connection
 
-## 1. Get RDS Endpoint
+## Overview
 
-Open:
+MySQL Workbench can be used as a graphical client for connecting to an Amazon RDS MySQL database.
 
-```text
-AWS Console
-→ RDS
-→ Databases
-→ RDS-mysql
-```
+This document describes the connection information and steps required to connect MySQL Workbench to the RDS instance.
 
-Find the database endpoint under the connectivity section.
+## Required Connection Information
 
-The endpoint will be used as the MySQL Workbench host.
+The following information is required:
 
----
+| Field           | Value                    |
+| --------------- | ------------------------ |
+| Connection Name | `AWS RDS MySQL`          |
+| Hostname        | `<DB_INSTANCE_ENDPOINT>` |
+| Port            | `3306`                   |
+| Username        | `<DB_USERNAME>`          |
+| Password        | `<DB_PASSWORD>`          |
 
-## 2. Open MySQL Workbench
+The actual password must not be committed to GitHub.
 
-Open MySQL Workbench and select:
+## Create a New Connection
 
-```text
-MySQL Connections
-→ +
-```
+Open MySQL Workbench and create a new MySQL connection.
 
-Create a new connection.
-
----
-
-## 3. Connection Configuration
-
-Example:
+Use the following configuration:
 
 ```text
 Connection Name:
-RDS MySQL
+AWS RDS MySQL
 
 Hostname:
-YOUR_RDS_ENDPOINT
+<DB_INSTANCE_ENDPOINT>
 
 Port:
 3306
 
 Username:
-admin
+<DB_USERNAME>
 ```
 
----
+Enter the password securely when requested.
 
-## 4. Password
-
-Select:
-
-```text
-Store in Keychain / Vault
-```
-
-Enter the database password securely.
-
-Do not write the password inside the project files.
-
----
-
-## 5. Test Connection
-
-Click:
-
-```text
-Test Connection
-```
-
-If the configuration is correct, MySQL Workbench should successfully connect to the RDS instance.
-
----
-
-## 6. Connection Flow
+## Connection Flow
 
 ```text
 MySQL Workbench
        │
-       │
-       │ Port 3306
+       │ Hostname + Port
        ▼
 Security Group
        │
+       │ TCP 3306
        ▼
-AWS RDS MySQL
-       │
-       ▼
-clarusway Database
+Amazon RDS MySQL
 ```
 
----
+## Test the Connection
+
+After entering the connection information, use the connection test option in MySQL Workbench.
+
+A successful connection confirms that:
+
+* The RDS instance is available
+* The endpoint is correct
+* The port is reachable
+* The Security Group allows the connection
+* The credentials are valid
 
 ## Troubleshooting Checklist
 
-If the connection fails, check:
+If the connection fails, verify:
 
-- RDS instance status
-- RDS endpoint
-- Port 3306
-- Security Group inbound rule
-- Source IP
-- Username
-- Password
-- Public accessibility
-- Network connectivity
+1. RDS instance status
+2. RDS endpoint
+3. MySQL port `3306`
+4. Security Group rules
+5. Username
+6. Password
+7. Network accessibility
+
+## Security
+
+Do not store database passwords in this repository.
+
+Use placeholders in documentation:
+
+```text
+<DB_USERNAME>
+<DB_PASSWORD>
+<DB_INSTANCE_ENDPOINT>
+```
+
+## Next Step
+
+After establishing the connection, continue with:
+
+```text
+sql-operations.md
+```
+
+to practice SQL operations against the database.
