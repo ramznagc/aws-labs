@@ -19,6 +19,7 @@ By completing this lab, I practiced:
 - Launching EC2 instances
 - Stopping EC2 instances
 - Terminating EC2 instances
+- Building a read-only EC2 inventory script
 
 ---
 
@@ -39,4 +40,5 @@ Boto3
       └── Amazon EC2
            ├── Launch Instance
            ├── Stop Instance
-           └── Terminate Instance
+           ├── Terminate Instance
+           └── EC2 Inventory
