@@ -11,10 +11,10 @@ This section documents my networking studies while learning Cloud Computing and 
 | 🌐 Network 01 – Introduction to Networks | ✅ Completed |
 | 📡 Network 02 – TCP/IP Fundamentals | ✅ Completed |
 | 🌍 Network 03 – IP Addressing | ✅ Completed |
+| 🧩 Network 04 – IP Subnetting | ✅ Completed |
 
 ## 🚀 Upcoming Labs
 
-- Subnetting
 - CIDR
 - VLAN
 - Routing
