@@ -2,35 +2,19 @@
 
 Welcome to my Networking Hands-on Labs.
 
-This section documents my networking studies while building a strong foundation for Cloud Computing and AWS.
+This section documents my networking studies while learning Cloud Computing and AWS.
 
-## 📚 Learning Progress
+## 📚 Completed Labs
 
 | Lab | Status |
 |------|--------|
 | 🌐 Network 01 – Introduction to Networks | ✅ Completed |
 | 📡 Network 02 – TCP/IP Fundamentals | ✅ Completed |
 | 🌍 Network 03 – IP Addressing | ✅ Completed |
-| 🧩 Network 04 – IP Subnetting | ✅ Completed |
 
-## 🧩 Network 04 — IP Subnetting
+## 🚀 Upcoming Labs
 
-Added a dedicated subnetting lab covering:
-
-- Network segmentation
-- CIDR prefixes
-- `/24` to `/26` subnet examples
-- Public and private subnet concepts
-- Cloud networking relevance
-
-### 📂 Latest Notes
-
-- [IP Subnetting](./networking/network-04-ip-subnetting.md)
-- [Subnetting Examples](./networking/network-04-ip-subnetting-examples.md)
-- [IP Addressing Cheat Sheet](./cheatsheets/ip-addressing-cheat-sheet.md)
-
-## 🚀 Upcoming Topics
-
+- Subnetting
 - CIDR
 - VLAN
 - Routing
@@ -45,24 +29,32 @@ Added a dedicated subnetting lab covering:
 - Understand cloud networking concepts
 - Prepare for AWS and DevOps roles
 - Document every hands-on lab
-- Connect networking fundamentals with AWS infrastructure
 
-## 🗺️ Networking Roadmap
+---
 
-```text
-Networking Fundamentals
-        ↓
-IP Addressing
-        ↓
-Subnetting
-        ↓
-CIDR
-        ↓
-Routing
-        ↓
-VPC Networking
-        ↓
-AWS Cloud & DevOps
-```
+## 📖 Cheat Sheets
+
+Quick reference notes created during my networking studies.
+
+| Topic | Status |
+|--------|--------|
+| 🌐 IP Addressing Cheat Sheet | ✅ Available |
+
+### 📂 Available Notes
+
+- [IP Addressing Cheat Sheet](./cheatsheets/ip-addressing-cheat-sheet.md)
 
 ⭐ Networking is one of the fundamental skills for Cloud Engineering.
+
+---
+
+## 🗺️ Planned Network Topology Diagrams
+
+To improve the learning experience, topology diagrams will be added as new labs are completed.
+
+| Lab | Diagram |
+|------|---------|
+| Network 01 – Introduction to Networks | ⏳ Planned |
+| Network 02 – TCP/IP Fundamentals | ⏳ Planned |
+| Network 03 – IP Addressing | ⏳ Planned |
+| Future Networking Labs | ⏳ Planned |
