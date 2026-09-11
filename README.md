@@ -1,19 +1,46 @@
-# 🌐 Networking Hands-on Labs
+# ☁️ AWS Hands-on Labs
 
-Welcome to my Networking Hands-on Labs.
+Welcome to my AWS Hands-on Labs repository.
 
-This section documents my networking studies while learning Cloud Computing and AWS.
+This repository documents my practical AWS and Cloud learning journey through hands-on labs, covering core AWS services, networking, security, infrastructure, and cloud operations.
 
-## 📚 Completed Labs
+---
+
+## 📚 Completed AWS Labs
 
 | Lab | Status |
 |------|--------|
-| 🌐 Network 01 – Introduction to Networks | ✅ Completed |
-| 📡 Network 02 – TCP/IP Fundamentals | ✅ Completed |
-| 🌍 Network 03 – IP Addressing | ✅ Completed |
-| 🧩 Network 04 – IP Subnetting | ✅ Completed |
+| 🖥️ CLI | ✅ Completed |
+| ☁️ CloudFormation | ✅ Completed |
+| 🖥️ EC2 | ✅ Completed |
+| 💾 EFS | ✅ Completed |
+| 🔐 IAM | ✅ Completed |
+| 🌐 Networking | ✅ Completed |
+| 🗄️ RDS | ✅ Completed |
+| 🌍 Route 53 | ✅ Completed |
+| 🪣 S3 | ✅ Completed |
+| 🔗 VPC | ✅ Completed |
+| 🔗 VPC-2 | ✅ Completed |
+| 🔗 VPC-3 | ✅ Completed |
+| 🔗 VPC-4 | ✅ Completed |
+| 🛡️ WAF | ✅ Completed |
 
-## 🚀 Upcoming Labs
+---
+
+## 🌐 Networking Hands-on Labs
+
+The networking section focuses on building strong networking fundamentals and understanding how networking concepts are applied in AWS environments.
+
+### 📖 Completed Networking Topics
+
+| Topic | Status |
+|------|--------|
+| 🌐 Introduction to Networks | ✅ Completed |
+| 📡 TCP/IP Fundamentals | ✅ Completed |
+| 🌍 IP Addressing | ✅ Completed |
+| 🧩 IP Subnetting | ✅ Completed |
+
+### 🚀 Upcoming Networking Topics
 
 - CIDR
 - VLAN
@@ -23,40 +50,21 @@ This section documents my networking studies while learning Cloud Computing and 
 - VPC Networking
 - VPN
 
-## 🎯 Goals
-
-- Build strong networking fundamentals
-- Understand cloud networking concepts
-- Prepare for AWS and DevOps roles
-- Document every hands-on lab
-
 ---
 
-## 📖 Cheat Sheets
+## 🛡️ AWS Security
 
-Quick reference notes created during my networking studies.
+Security-related hands-on practice includes:
 
-| Topic | Status |
-|--------|--------|
-| 🌐 IP Addressing Cheat Sheet | ✅ Available |
-
-### 📂 Available Notes
-
-- [IP Addressing Cheat Sheet](./cheatsheets/ip-addressing-cheat-sheet.md)
-
-⭐ Networking is one of the fundamental skills for Cloud Engineering.
-
----
-
-## 🗺️ Planned Network Topology Diagrams
-
-To improve the learning experience, topology diagrams will be added as new labs are completed.
-
-| Lab | Diagram |
-|------|---------|
-| Network 01 – Introduction to Networks | ⏳ Planned |
-| Network 02 – TCP/IP Fundamentals | ⏳ Planned |
-| Network 03 – IP Addressing | ⏳ Planned |
-| Future Networking Labs | ⏳ Planned |
-
-> 📝 Last updated: 11 September 2026
+```text
+AWS Security
+     │
+     ├── IAM
+     │
+     ├── Security Groups
+     │
+     └── AWS WAF
+          │
+          ├── Web ACL
+          ├── IP Blocking
+          └── Rate Limiting
