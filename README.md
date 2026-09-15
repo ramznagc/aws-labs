@@ -59,3 +59,4 @@ To improve the learning experience, topology diagrams will be added as new labs 
 | Network 03 – IP Addressing | ⏳ Planned |
 | Future Networking Labs | ⏳ Planned |
 
+> 📝 Last updated: 11 September 2026
