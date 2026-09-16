@@ -2,11 +2,11 @@
 
 Welcome to my AWS Hands-on Labs repository.
 
-This repository documents my practical AWS and Cloud learning journey through hands-on labs, covering core AWS services, networking, security, infrastructure, and cloud operations.
+This repository documents my practical AWS and Cloud learning journey through hands-on labs, covering core AWS services, networking, security, infrastructure, messaging, and cloud operations.
 
 ---
 
-## 📚 Completed AWS Labs
+## 📚 AWS Hands-on Labs
 
 | Lab | Status |
 |------|--------|
@@ -24,6 +24,8 @@ This repository documents my practical AWS and Cloud learning journey through ha
 | 🔗 VPC-3 | ✅ Completed |
 | 🔗 VPC-4 | ✅ Completed |
 | 🛡️ WAF | ✅ Completed |
+| 📢 SNS | ✅ Completed |
+| 📬 SQS | ✅ Completed |
 
 ---
 
