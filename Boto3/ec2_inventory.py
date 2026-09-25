@@ -1,6 +1,10 @@
 import boto3
+import argparse
 
-ec2 = boto3.client("ec2")
+parser = argparse.ArgumentParser(description="EC2 inventory")
+parser.add_argument("--region", help="AWS region")
+args = parser.parse_args()
+ec2 = boto3.client("ec2", region_name=args.region)
 
 response = ec2.describe_instances()
 

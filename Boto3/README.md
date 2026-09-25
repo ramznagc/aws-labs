@@ -20,6 +20,7 @@ By completing this lab, I practiced:
 - Stopping EC2 instances
 - Terminating EC2 instances
 - Building a read-only EC2 inventory script
+- Working with AWS regions using command-line arguments
 
 ---
 
@@ -42,3 +43,28 @@ Boto3
            ├── Stop Instance
            ├── Terminate Instance
            └── EC2 Inventory
+
+
+---
+
+## 🖥️ EC2 Inventory
+
+The `ec2_inventory.py` script retrieves EC2 instance information using Boto3.
+
+It displays:
+
+- Instance ID
+- Instance Name
+- Instance Type
+- Instance State
+- Private IP address
+- Public IP address
+
+The script uses the AWS `DescribeInstances` API and performs a **read-only inventory operation**.
+
+### Run
+
+Using the default AWS region:
+
+```bash
+python Boto3/ec2_inventory.py
