@@ -12,7 +12,7 @@ def list_buckets():
         buckets.append(
             {
                 "name": bucket["Name"],
-                "creation_date": bucket["CreationDate"],
+                "creation_date": bucket["CreationDate"].isoformat(),
             }
         )
 

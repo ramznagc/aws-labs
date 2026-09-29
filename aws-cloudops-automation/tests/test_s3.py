@@ -1,3 +1,4 @@
+from datetime import datetime, timezone
 from unittest.mock import patch
 
 from src.inventory.s3 import list_buckets
@@ -11,7 +12,12 @@ def test_list_buckets(mock_client):
         "Buckets": [
             {
                 "Name": "test-bucket",
-                "CreationDate": "2026-09-29",
+                "CreationDate": datetime(
+                    2026,
+                    9,
+                    29,
+                    tzinfo=timezone.utc,
+                ),
             }
         ]
     }
@@ -20,6 +26,6 @@ def test_list_buckets(mock_client):
 
     assert len(result) == 1
     assert result[0]["name"] == "test-bucket"
-    assert result[0]["creation_date"] == "2026-09-29"
+    assert result[0]["creation_date"] == "2026-09-29T00:00:00+00:00"
 
     mock_client.assert_called_once_with("s3")
