@@ -2,6 +2,7 @@ import argparse
 
 from src.inventory.ec2 import list_instances
 from src.inventory.s3 import list_buckets
+from src.inventory.lambda_inventory import list_functions
 
 
 def main():
@@ -40,6 +41,20 @@ def main():
     for bucket in buckets:
         print(f"Bucket: {bucket['name']}")
         print(f"Created: {bucket['creation_date']}")
+        print("-" * 40)
+
+    # Lambda Inventory
+    print()
+    print("Lambda Functions:")
+    print("-" * 40)
+
+    functions = list_functions(args.region)
+
+    for function in functions:
+        print(f"Name: {function['name']}")
+        print(f"Runtime: {function['runtime']}")
+        print(f"Handler: {function['handler']}")
+        print(f"State: {function['state']}")
         print("-" * 40)
 
 
