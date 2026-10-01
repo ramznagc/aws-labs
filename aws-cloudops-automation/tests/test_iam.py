@@ -6,16 +6,19 @@ from src.inventory.iam import list_users
 @patch("src.inventory.iam.boto3.client")
 def test_list_users(mock_client):
     mock_iam = mock_client.return_value
+    mock_paginator = mock_iam.get_paginator.return_value
 
-    mock_iam.list_users.return_value = {
-        "Users": [
-            {
-                "UserName": "test-user",
-                "UserId": "AIDA123456789",
-                "Arn": "arn:aws:iam::123456789012:user/test-user",
-            }
-        ]
-    }
+    mock_paginator.paginate.return_value = [
+        {
+            "Users": [
+                {
+                    "UserName": "test-user",
+                    "UserId": "AIDA123456789",
+                    "Arn": "arn:aws:iam::123456789012:user/test-user",
+                }
+            ]
+        }
+    ]
 
     result = list_users()
 
@@ -27,3 +30,4 @@ def test_list_users(mock_client):
     )
 
     mock_client.assert_called_once_with("iam")
+    mock_iam.get_paginator.assert_called_once_with("list_users")

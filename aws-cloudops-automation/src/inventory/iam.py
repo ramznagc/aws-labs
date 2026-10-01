@@ -4,17 +4,18 @@ import boto3
 def list_users():
     iam = boto3.client("iam")
 
-    response = iam.list_users()
+    paginator = iam.get_paginator("list_users")
 
     users = []
 
-    for user in response["Users"]:
-        users.append(
-            {
-                "name": user["UserName"],
-                "id": user["UserId"],
-                "arn": user["Arn"],
-            }
-        )
+    for page in paginator.paginate():
+        for user in page["Users"]:
+            users.append(
+                {
+                    "name": user["UserName"],
+                    "id": user["UserId"],
+                    "arn": user["Arn"],
+                }
+            )
 
     return users
