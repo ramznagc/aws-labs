@@ -3,6 +3,7 @@ import argparse
 from src.inventory.ec2 import list_instances
 from src.inventory.s3 import list_buckets
 from src.inventory.lambda_inventory import list_functions
+from src.inventory.iam import list_users
 
 
 def main():
@@ -55,6 +56,19 @@ def main():
         print(f"Runtime: {function['runtime']}")
         print(f"Handler: {function['handler']}")
         print(f"State: {function['state']}")
+        print("-" * 40)
+
+    # IAM Inventory
+    print()
+    print("IAM Users:")
+    print("-" * 40)
+
+    users = list_users()
+
+    for user in users:
+        print(f"Name: {user['name']}")
+        print(f"User ID: {user['id']}")
+        print(f"ARN: {user['arn']}")
         print("-" * 40)
 
 
