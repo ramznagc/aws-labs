@@ -6,17 +6,20 @@ from src.inventory.cloudwatch import list_alarms
 @patch("src.inventory.cloudwatch.boto3.client")
 def test_list_alarms(mock_client):
     mock_cloudwatch = mock_client.return_value
+    mock_paginator = mock_cloudwatch.get_paginator.return_value
 
-    mock_cloudwatch.describe_alarms.return_value = {
-        "MetricAlarms": [
-            {
-                "AlarmName": "HighCPU",
-                "StateValue": "OK",
-                "MetricName": "CPUUtilization",
-                "Namespace": "AWS/EC2",
-            }
-        ]
-    }
+    mock_paginator.paginate.return_value = [
+        {
+            "MetricAlarms": [
+                {
+                    "AlarmName": "HighCPU",
+                    "StateValue": "OK",
+                    "MetricName": "CPUUtilization",
+                    "Namespace": "AWS/EC2",
+                }
+            ]
+        }
+    ]
 
     result = list_alarms("us-east-1")
 
@@ -29,4 +32,8 @@ def test_list_alarms(mock_client):
     mock_client.assert_called_once_with(
         "cloudwatch",
         region_name="us-east-1",
+    )
+
+    mock_cloudwatch.get_paginator.assert_called_once_with(
+        "describe_alarms"
     )
