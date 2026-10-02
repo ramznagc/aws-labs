@@ -4,6 +4,7 @@ from src.inventory.ec2 import list_instances
 from src.inventory.s3 import list_buckets
 from src.inventory.lambda_inventory import list_functions
 from src.inventory.iam import list_users
+from src.inventory.cloudwatch import list_alarms
 
 
 def main():
@@ -69,6 +70,20 @@ def main():
         print(f"Name: {user['name']}")
         print(f"User ID: {user['id']}")
         print(f"ARN: {user['arn']}")
+        print("-" * 40)
+
+    # CloudWatch Inventory
+    print()
+    print("CloudWatch Alarms:")
+    print("-" * 40)
+
+    alarms = list_alarms(args.region)
+
+    for alarm in alarms:
+        print(f"Name: {alarm['name']}")
+        print(f"State: {alarm['state']}")
+        print(f"Metric: {alarm['metric']}")
+        print(f"Namespace: {alarm['namespace']}")
         print("-" * 40)
 
 
